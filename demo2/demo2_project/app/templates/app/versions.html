@@ -1,0 +1,98 @@
+{% extends 'app/test4C.html' %}
+
+
+{% block title %} versions {% endblock %}
+
+{% block content %}
+
+<style>
+.display-1 {
+    font-size: 8rem;
+    font-weight: 500;
+    text-align: center;    
+}
+.postman-app {
+    background-color: rgba(255,108,55,.7)
+}
+
+.postman-canary {
+    background-color: rgba(101,92,128,.7)
+}
+
+.table-versions {
+    background-color: rgba(109,127,145,.9)
+}
+
+</style>
+
+
+<div class="container" style="height: 200px;"> 
+        <!-- Content here -->
+      </div>
+
+<div class="row" style="height: 400px;">
+    <div class="col-sm">
+    <div class="card postman-app h-100  mb-3">
+        <div class="card-body">
+            <h3 class="card-title">Current App Version</h3>
+            <h1 class="display-1">
+                {% for key in version %}
+                {{ key.version }}
+                {% endfor %}
+            </h1>                            
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="card postman-canary h-100  mb-3">
+            <div class="card-body">
+                <h3 class="card-title">Current Canary Version</h3>
+                <h1 class="display-1">
+                {% for key in c_version %}
+                {{ key.version }}
+                {% endfor %}  
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+</br></br>
+
+<div class="row" style="height: 400px;">
+        <div class="col-sm">
+
+
+        <table class="table-versions table-sm table-striped rounded-lg mb-3">
+        
+            <thead>
+                <tr>
+                    <th scope="col">   Version Release Dates </th>
+                </tr>
+            </thead>
+        
+                <tbody>
+                    {% for key in info %}
+                        {% for i in key.info %}
+                 
+                <tr>
+                    <td scope="row">   
+                        {{ i.name }}
+                    </td> 
+                    <td scope="row">   
+                        {{ i.createdAt|slice:":10" }}
+                        </td> 
+                </tr>
+
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+        
+        </table>
+</div>
+</div>
+
+
+
+
+{% endblock %}

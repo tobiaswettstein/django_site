@@ -1,0 +1,99 @@
+{% load static %}
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- T H I S   I S   T H E   B A S E   H T M L -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- 
+    <script src="jquery-3.4.1.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+
+<!-- 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+                    crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+                    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+                    crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+                    crossorigin="anonymous"></script>
+
+
+    <style>
+        .display-1 {
+            font-size: 13rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -100;
+                            
+                            
+            /* gradient back */
+                            
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1c262c+33,325562+71 */
+            background: #1c262c; /* Old browsers */
+            background: -moz-linear-gradient(top,  #1c262c 33%, #325562 71%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #1c262c 33%,#325562 71%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #1c262c 33%,#325562 71%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c262c', endColorstr='#325562',GradientType=0 ); /* IE6-9 */
+       
+            }
+                                    
+        .fullscreen-bg__video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            }
+                            
+    </style>
+                            
+   
+        <div class="fullscreen-bg">
+            
+        <video loop muted autoplay poster="{% static 'images/background.jpg' %}" class="fullscreen-bg__video">
+          <source src="{% static 'videos/monitor_backgroundB.mp4' %}" type="video/mp4">
+        </video>
+      
+        </div>   
+      
+      
+        <!-- <img src="{% static 'images/background.jpg' %}"> -->
+      
+
+</head>
+
+
+<body>
+
+<div class="container-fluid">
+    
+    {% block content %}
+    {% endblock %}
+                
+</div>
+
+
+</body>
+</html>

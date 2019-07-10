@@ -1,0 +1,113 @@
+{% extends 'app/test4C.html' %}
+
+
+{% block title %} calculator {% endblock %}
+
+{% block content %}
+
+<br/>
+
+<!-- calculator test -->
+
+<br/>
+
+
+<br/>
+<div class="container">
+
+    <div class="row justify-content-md-center">
+
+	<div class="col-lg-5" >
+
+            <ul class="list-group mb-4">
+            
+                <font color="beige">D W A R F  /  G O B L I N</font>
+            
+            {% for e in one %}
+            <li class="list-group-item list-group-item-info mb-1">
+                {{ e }}</li>
+            {% endfor %}
+            </ul>
+     
+    </div>
+    </div>
+</div> 
+
+
+<style>
+.super-awesmome-cool-table{
+    margin-bottom: 150px;
+}
+</style>
+
+
+
+<div class="row justify-content-md-center super-awesmome-cool-table" >
+
+<table class="table-sm table-info table-striped table-bordered">
+
+    <thead>
+        <tr>
+            <th scope="col">  DWARF / GOBLIN</th>
+        </tr>
+    </thead>
+
+        <tbody>
+        {% for i in one %}
+         
+        <tr>
+            <td scope="row">   
+               {{ i }}
+            </td> 
+        </tr>
+
+        {% endfor %}
+        </tbody>
+
+</table>
+</div>
+
+<br/><br/><br/>
+<br/><br/><br/>
+<br/><br/><br/>
+<br/><br/><br/>
+
+<div>
+
+    <table class="table-sm table-primary table-striped rounded-pill mb-1">
+        
+            <thead>
+                <tr>
+                    <th scope="col">  DWARF / GOBLIN </th>
+                </tr>
+            </thead>
+            
+    </table>
+
+
+    {% for i in one %}
+    
+    <table class="table-sm table-success table-striped rounded-pill mb-1">
+        <tbody>
+
+            <tr>
+                    <td scope="row">   
+                       {{ i }} 
+                    </td> 
+            </tr>
+
+        </tbody> 
+    </table>
+    {% endfor %}
+
+
+</div>
+        
+<br/><br/><br/>
+<br/><br/><br/>
+<br/><br/><br/>
+<br/><br/><br/>
+        
+
+
+{% endblock %}

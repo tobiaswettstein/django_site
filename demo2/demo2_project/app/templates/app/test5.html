@@ -1,0 +1,136 @@
+{% extends 'app/test4C.html' %}  <!-- this brings in my background video -->
+
+{% load static %}
+ 
+{% block title %} TEsT 5 {% endblock %}
+
+{% block content %}
+
+<!-- <script>
+
+window.onload = function() {
+    if (window.jQuery) {  
+        // jQuery is loaded  
+        alert("Yeah!");
+    } else {
+        // jQuery is not loaded
+        alert("Doesn't Work");
+    }
+}
+
+</script> -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+This is a test<br>
+[8, 24, 'kb'] <br>
+
+<!-- <script>
+        function click_action()  {
+    $('#myBtn').click(function(){
+    var name=$("#idName").val();
+
+    $.ajax({
+        url: "/app/test5/",
+        method: "POST", 
+        data: {"name": name}, 
+        success: function (data) {        
+            if (data.pd) {alert("New data: " + data.pd);}
+        }
+    });
+});
+        }
+</script>
+
+<form id="post-form">
+        {% csrf_token %}
+    
+        <input id="idName" name="x" placeholder="Enter number" value="" required autofocus>
+    
+        <button onclick="click_action()" name="start_button" id="myBtn" type="button">add to list </button>
+</form> -->
+
+<!-- <script>
+        function submit_action(event)  {
+            event.preventDefault();  // to prevent the page reload (and the submit also)
+    
+            let number = $("#numberInput").val();
+    
+            $.ajax({
+               url: "/app/test5/",
+               method: "POST", 
+               data: {"x": number}, 
+               success: function (data) {        
+                   // here you receive the data and you need "manually" update the template
+                   console.log(data);
+               }
+           });
+        }
+    </script> -->
+    
+
+<div>
+
+    <form id="post-form" method="post" action="/app/test5/">
+        {% csrf_token %}
+    
+        <input id="numberInput" name="x" placeholder="Enter number" value="" required autofocus>
+    
+        <button type="submit" value="submit"> add to list </button>
+    </form>
+
+</div>
+    
+
+
+
+
+
+
+
+<!-- <script>
+  console.log(x)
+</script>     -->
+{{ pd }}
+
+
+
+
+
+<br><br>
+<br>
+<br>
+ 
+
+<script>
+        function clickCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (sessionStorage.clickcount) {
+              sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+            } else {
+              sessionStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s).";
+          } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+          }
+        }
+</script>
+
+
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+
+
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
+
+
+{% endblock %}

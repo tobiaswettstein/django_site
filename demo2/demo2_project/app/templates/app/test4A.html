@@ -1,0 +1,128 @@
+{% extends 'app/test4C.html' %}
+
+
+{% block title %} test4A {% endblock %}
+
+{% block content %}
+
+
+
+<br/><br/><br/>    
+<br/><br/><br/> 
+<br/><br/><br/> 
+<br/><br/><br/> 
+<br/><br/><br/> 
+<br/><br/><br/> 
+
+
+
+add test
+
+<br/><br/><br/>
+
+{{ add }}
+
+<br/><br/><br/>
+
+
+{% for key in add %}
+                    <tr>
+                        <td>{{ key.alignment }}</td>
+                        <td>{{ key.armor_class }}</td>
+                        <td>{{ key.size }}</td>
+    
+                    </tr>
+                {% endfor %}
+
+<br/><br/><br/>
+
+more random html
+
+<br/><br/><br/>
+
+{{ test1 }}
+
+<br/><br/><br/>
+
+
+{% for key in test1 %}
+                    <tr>
+                        <td>{{ key.name }}</td>
+                        <td>{{ key.blog }}</td>
+                        <td>{{ key.email }}</td>
+                        <td>{{ key.public_gists }}</td>
+
+                    </tr>
+                {% endfor %}
+
+<br/><br/><br/>
+
+</tr>
+
+<br/><br/><br/>
+
+<h1 class="text-center"> Black Dragon Stats </h1>
+    <div class="col-lg-12">
+        <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped tablesorter">
+                    <thead>
+                    <tr>
+                      <th class="header"> Alignment <i class="icon-sort"></i></th>
+                      <th class="header"> Armor Class <i class="icon-sort"></i></th>
+                      <th class="header"> Size <i class="icon-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                {% for key in add %}
+                    <tr>
+                        <td>{{ key.alignment }}</td>
+                        <td>{{ key.armor_class }}</td>
+                        <td>{{ key.size }}</td>
+    
+                    </tr>
+                {% endfor %}
+                
+                </tbody>
+                </table>
+        </div>
+    </div>
+
+
+
+</br></br></br></br>
+
+
+<h1 class="text-center"> Github User Data </h1>
+	<div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped tablesorter">
+                <thead>
+                <tr>
+                  <th class="header"> Name <i class="icon-sort"></i></th>
+                  <th class="header"> Blog <i class="icon-sort"></i></th>
+                  <th class="header"> E-Mail <i class="icon-sort"></i></th>
+                  <th class="header"> Public Gists <i class="icon-sort"></i></th>
+
+                </tr>
+            </thead>
+            <tbody>
+            
+            {% for key in test1 %}
+                <tr>
+                    <td>{{ key.name }}</td>
+                    <td>{{ key.blog }}</td>
+                    <td>{{ key.email }}</td>
+                    <td>{{ key.public_gists }}</td>
+
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+{% endblock %}
