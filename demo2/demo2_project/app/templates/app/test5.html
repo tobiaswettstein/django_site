@@ -6,67 +6,30 @@
 
 {% block content %}
 
-<!-- <script>
 
-window.onload = function() {
-    if (window.jQuery) {  
-        // jQuery is loaded  
-        alert("Yeah!");
-    } else {
-        // jQuery is not loaded
-        alert("Doesn't Work");
-    }
-}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-</script> -->
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+This is a test: <br>
+[8, 24, 'kb'] add to this array without page refresh<br>
+<br>
 
-This is a test<br>
-[8, 24, 'kb'] <br>
+    
+    <div id="result"> 
+      </div>
+      
 
-<!-- <script>
-        function click_action()  {
-    $('#myBtn').click(function(){
-    var name=$("#idName").val();
+    <script>
+        let ll = [8, 24, 'kb'];
+        function addNumber() {
+          let xx = document.getElementById("numberInput").value;
+          ll.push(xx);
+          console.log(ll)
+          document.getElementById("demo").innerHTML = ll;
 
-    $.ajax({
-        url: "/app/test5/",
-        method: "POST", 
-        data: {"name": name}, 
-        success: function (data) {        
-            if (data.pd) {alert("New data: " + data.pd);}
         }
-    });
-});
-        }
-</script>
-
-<form id="post-form">
-        {% csrf_token %}
-    
-        <input id="idName" name="x" placeholder="Enter number" value="" required autofocus>
-    
-        <button onclick="click_action()" name="start_button" id="myBtn" type="button">add to list </button>
-</form> -->
-
-<!-- <script>
-        function submit_action(event)  {
-            event.preventDefault();  // to prevent the page reload (and the submit also)
-    
-            let number = $("#numberInput").val();
-    
-            $.ajax({
-               url: "/app/test5/",
-               method: "POST", 
-               data: {"x": number}, 
-               success: function (data) {        
-                   // here you receive the data and you need "manually" update the template
-                   console.log(data);
-               }
-           });
-        }
-    </script> -->
-    
+        
+        
+    </script>
 
 <div>
 
@@ -75,22 +38,20 @@ This is a test<br>
     
         <input id="numberInput" name="x" placeholder="Enter number" value="" required autofocus>
     
-        <button type="submit" value="submit"> add to list </button>
+        <button onclick="addNumber()" type="button"> add to list </button>
     </form>
 
 </div>
     
 
+<p id="demo"></p>
+
+<script>
+</script>
 
 
 
-
-
-
-<!-- <script>
-  console.log(x)
-</script>     -->
-{{ pd }}
+<!-- {{ pd }} -->
 
 
 
@@ -100,7 +61,7 @@ This is a test<br>
 <br>
 <br>
  
-
+<!-- 
 <script>
         function clickCounter() {
           if (typeof(Storage) !== "undefined") {
@@ -130,7 +91,7 @@ This is a test<br>
 function myFunction() {
   document.getElementById("demo").innerHTML = "Hello World";
 }
-</script>
+</script> -->
 
 
 {% endblock %}

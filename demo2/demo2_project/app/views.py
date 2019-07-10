@@ -188,16 +188,16 @@ def profile(request):
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-@csrf_exempt
+# @csrf_exempt
 def test5(request):
     pd = [8, 24, 'kb']
     user_data = {}
 
-    if request.method == 'POST':
+    # if request.method == 'POST':
 
-        x = request.POST.get('x') 
+    #     x = request.POST.get('x') 
 
-        pd.append(x)
+    #     pd.append(x)
 
     # return JsonResponse(status = 200, data = {'pd' : pd})
     # return HttpResponse(json.dumps({'pd' : pd}))
